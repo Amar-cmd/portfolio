@@ -1,218 +1,238 @@
-export type PortfolioMetric = {
-  value: string;
-  label: string;
-  detail: string;
-};
-
 export type PortfolioLink = {
   label: string;
   href: string;
 };
 
-export type PortfolioProject = {
+export type PortfolioWork = {
+  number: string;
+  year: string;
   title: string;
-  description: string;
-  tags: string[];
-  link?: PortfolioLink;
+  role: string;
+  summary: string;
+  proof: string;
+  stack: string[];
+  link: PortfolioLink;
 };
 
 export type PortfolioExperience = {
+  period: string;
   role: string;
   organization: string;
-  period: string;
   description: string;
-  tags: string[];
 };
 
 export const portfolioData = {
   hero: {
-    eyebrow: "AI PRODUCT • PRODUCT ANALYTICS • GENAI SAAS",
-    heading: "I build AI-assisted products and analytics workflows that solve real operational problems.",
+    eyebrow: "AI PRODUCT · PRODUCT ANALYTICS · GENAI",
+    heading: "Product thinking,",
+    emphasis: "backed by code.",
     description:
-      "B.Tech in Computer Science (AI & Data Science) and PGDM in Finance & Business Analytics, combining product thinking, SQL/Python analytics, and hands-on SaaS development.",
-    primaryCta: { label: "Explore Project Z", href: "#project-z" },
-    secondaryCta: { label: "View Resume", href: "/resume" },
+      "I turn messy workflows into practical products — combining product research, SQL/Python analytics, and hands-on AI SaaS development.",
+    context:
+      "B.Tech in Computer Science (AI & Data Science) · PGDM in Finance & Business Analytics",
+    primaryCta: { label: "View selected work", href: "#work" },
+    secondaryCta: { label: "Resume", href: "/resume" },
     socialLinks: [
       { label: "LinkedIn", href: "https://www.linkedin.com/in/a-jyoti/" },
       { label: "GitHub", href: "https://github.com/Amar-cmd" },
       { label: "YouTube", href: "https://www.youtube.com/@PremierProgrammer" },
     ],
+    facts: [
+      { label: "Currently", value: "PGDM · IMS Ghaziabad" },
+      { label: "Based", value: "Delhi NCR · Remote" },
+      { label: "Building", value: "Project Z" },
+    ],
   },
 
-  metrics: [
-    {
-      value: "100 / 100",
-      label: "Successful AI evaluations",
-      detail: "Controlled technical validation",
-    },
-    {
-      value: "18",
-      label: "SaaS products benchmarked",
-      detail: "Product research at Fooracles",
-    },
-    {
-      value: "165+",
-      label: "Technical tutorials published",
-      detail: "Premier Programmer",
-    },
-    {
-      value: "9.27 / 10",
-      label: "PGDM Year 1 CGPA",
-      detail: "IMS Ghaziabad",
-    },
-  ] satisfies PortfolioMetric[],
-
   flagship: {
-    label: "FLAGSHIP PRODUCT",
-    title: "AI Subjective Evaluation Engine",
-    subtitle: "Professor-first GenAI SaaS for rubric-grounded subjective-answer evaluation.",
-    description:
-      "Built an end-to-end academic evaluation workflow covering exam and rubric setup, LMS response ingestion, answer mapping, AI evaluation, professor review and re-evaluation, and final-marks export.",
-    principle:
-      "Designed around human-in-the-loop control: AI suggestions remain separate from final professor decisions, keeping the professor as the final authority.",
+    number: "01",
+    label: "FLAGSHIP CASE STUDY",
+    title: "Project Z",
+    headline:
+      "A professor-first way to evaluate subjective answers with AI — without handing final judgment to the model.",
+    problem:
+      "Subjective evaluation is repetitive and slow, but a fully automated grader creates a different problem: faculty lose control over context, rubric interpretation and final marks.",
+    built:
+      "I designed and built an end-to-end workflow covering exam and rubric setup, LMS response ingestion, answer mapping, AI evaluation, professor review, re-evaluation and final-marks export.",
+    decisions: [
+      {
+        title: "Keep the human decision separate",
+        body:
+          "AI suggestions and final professor decisions are stored separately. The professor remains the final authority instead of becoming a rubber stamp.",
+      },
+      {
+        title: "Design for failure, not just the happy path",
+        body:
+          "Background jobs, retries, fault recovery and provider-attempt tracking make evaluation work recoverable instead of fragile.",
+      },
+      {
+        title: "Treat academic data as tenant-scoped data",
+        body:
+          "Multi-tenant access controls, PostgreSQL RLS, audit trails and immutable export snapshots were built into the workflow rather than added later.",
+      },
+    ],
     validation: {
-      label: "Controlled technical validation",
-      fixture: "50-student × 2-question fixture",
-      stats: [
-        "100 mappings",
-        "100 evaluation tasks",
-        "100 successful AI evaluations",
-        "0 failed evaluation tasks",
+      heading: "Controlled technical validation",
+      fixture: "50 students × 2 questions",
+      metrics: [
+        { value: "100", label: "answer mappings" },
+        { value: "100", label: "evaluation tasks" },
+        { value: "100", label: "successful AI evaluations" },
+        { value: "0", label: "failed evaluation tasks" },
       ],
+      note:
+        "This is a technical test fixture, not a claim of real faculty adoption. The next step is a controlled professor pilot measuring time saved, approval rate, modification rate and grading agreement.",
     },
     flow: [
-      "LMS response ingestion",
+      "Exam + rubric",
+      "LMS responses",
       "Answer mapping",
-      "AI evaluation",
+      "AI first pass",
       "Professor review",
-      "Final-marks export",
+      "Final marks export",
     ],
-    tech: [
+    stack: [
       "Next.js",
       "TypeScript",
-      "Supabase/PostgreSQL",
-      "Auth/RLS",
+      "Supabase / PostgreSQL",
+      "Auth + RLS",
       "Gemini",
       "Vercel",
     ],
     liveUrl: "https://projectz.vercel.app",
-    liveNote: "Login required — the workflow preview above lets recruiters understand the core product flow without signing in.",
+    liveNote: "Login is required for the protected professor workflow.",
   },
 
   selectedWork: [
     {
-      title: "Placement Cell Data Processing & Workflow Automation",
-      description:
-        "Automated consolidation, standardization, routing and highlighting of responses from multiple Google Forms across Google Sheets, reducing repetitive manual processing effort by approximately 50–60%.",
-      tags: ["Workflow Automation", "Google Sheets", "Data Cleaning"],
+      number: "02",
+      year: "2026",
+      title: "Placement Cell Workflow Automation",
+      role: "Workflow automation · data operations",
+      summary:
+        "Automated consolidation, standardization, routing and highlighting of responses from multiple Google Forms across Google Sheets.",
+      proof: "Reduced repetitive manual processing effort by approximately 50–60%.",
+      stack: ["Google Sheets", "Data Cleaning", "Workflow Automation"],
       link: {
-        label: "View live workflow",
+        label: "Open live workflow",
         href: "https://placement-copilot-vercel.vercel.app",
       },
     },
     {
-      title: "AI Buddy — AI-Powered College Assistance Chatbot",
-      description:
-        "Built a full-stack AI assistant with authenticated chat, a managed knowledge base, caching, rate limiting, and multi-provider LLM fallback with provider-level diagnostics.",
-      tags: ["GenAI", "LLM APIs", "Next.js", "Supabase", "PostgreSQL"],
+      number: "03",
+      year: "2026",
+      title: "AI Buddy",
+      role: "GenAI product · full-stack prototype",
+      summary:
+        "Built an authenticated college assistance chatbot with a managed knowledge base, caching, rate limiting and multi-provider LLM fallback.",
+      proof:
+        "Provider-level diagnostics capture success, failure, timeout, latency and fallback behavior instead of hiding model reliability behind a single chat box.",
+      stack: ["Next.js", "Supabase", "PostgreSQL", "LLM APIs"],
       link: {
-        label: "View live app",
+        label: "Open live app",
         href: "https://college-ai-helpdesk-chatbot.vercel.app",
       },
     },
     {
-      title: "Counterfactual Learning in Customer Churn Prediction",
-      description:
-        "Developed a churn-prediction workflow under class imbalance using SMOTE, Logistic Regression and neural networks, with counterfactual explanations using Wachter’s Method, Growing Spheres and a Genetic Algorithm.",
-      tags: ["Python", "Machine Learning", "Explainable AI", "Data Analysis"],
+      number: "04",
+      year: "2024",
+      title: "Counterfactual Learning in Customer Churn",
+      role: "Machine learning research",
+      summary:
+        "Studied customer churn under class imbalance and documented the modelling approach and findings through a research paper and reproducible notebook.",
+      proof:
+        "Explored class-imbalance handling and counterfactual explanation methods to move beyond prediction toward actionable interpretation.",
+      stack: ["Python", "Machine Learning", "Explainable AI", "Data Analysis"],
       link: {
-        label: "View research & code",
+        label: "View research + code",
         href: "https://github.com/Amar-cmd/Counterfactual-Learning-In-Customer-Churn-Prediction-Under-Class-Imbalance",
       },
     },
-  ] satisfies PortfolioProject[],
+  ] satisfies PortfolioWork[],
 
   experience: [
     {
+      period: "May 2026 — Jul 2026",
       role: "Product Testing & Research Intern",
       organization: "Fooracles",
-      period: "May 2026 – Jul 2026",
       description:
-        "Benchmarked 18 SaaS competitors and conducted detailed feature and UX/UI analysis across 10 key products to identify product gaps, usability issues and improvement opportunities. Translated findings into Figma-based product/interface recommendations, with selected recommendations adopted.",
-      tags: ["Product Research", "Competitive Analysis", "UX Research", "Figma"],
+        "Benchmarked 18 SaaS competitors and completed detailed feature and UX/UI analysis across 10 products. Turned findings into Figma-based product and interface recommendations; selected recommendations were adopted.",
     },
     {
+      period: "Mar 2024 — Present",
       role: "Founder & Technical Educator",
       organization: "Premier Programmer",
-      period: "Mar 2024 – Present",
       description:
-        "Build structured technical learning content across programming, data and AI. Completed a Python learning track with 165+ tutorials, 40+ hours of content, 750+ coding questions and 25 hands-on projects.",
-      tags: ["Python", "Technical Communication", "Content Development"],
+        "Published 165+ Python tutorials covering 40+ hours of content, 750+ coding questions and 25 hands-on projects — translating technical ideas into structured learning experiences.",
     },
   ] satisfies PortfolioExperience[],
 
+  about: {
+    label: "ABOUT",
+    heading: "I sit between the product question and the technical implementation.",
+    paragraphs: [
+      "My B.Tech gave me the engineering base to understand systems and build prototypes. My PGDM added the business, finance and analytics context to ask whether something should be built in the first place.",
+      "That combination is why I am most interested in AI Product, Product Analytics and technical product roles: work where user problems, data, product decisions and implementation all matter.",
+    ],
+    principles: [
+      {
+        number: "01",
+        title: "Problem before feature",
+        body: "Start with the workflow, user constraint and evidence — not the technology label.",
+      },
+      {
+        number: "02",
+        title: "Build enough to learn",
+        body: "Use prototypes and working systems to answer product questions, not just to decorate a portfolio.",
+      },
+      {
+        number: "03",
+        title: "Keep claims measurable",
+        body: "Separate technical validation from real-world adoption, and state what is still unproven.",
+      },
+    ],
+  },
+
   capabilities: [
     {
-      title: "Product & Analytics",
-      items: [
-        "Product Analytics",
-        "SQL/PostgreSQL",
-        "Business Analytics",
-        "Power BI",
-        "Advanced Excel",
-        "Competitive Analysis",
-        "UX Research",
-      ],
+      title: "Product",
+      items: "Product research · competitive analysis · workflow analysis · UX research · Figma",
     },
     {
-      title: "AI & Automation",
-      items: [
-        "Generative AI",
-        "LLM APIs",
-        "Prompt Design",
-        "Human-in-the-Loop AI",
-        "AI Evaluation Workflows",
-        "Workflow Automation",
-      ],
+      title: "Analytics",
+      items: "SQL / PostgreSQL · Python / Pandas · Power BI · Advanced Excel · data cleaning",
     },
     {
-      title: "Build & Prototype",
-      items: [
-        "Python/Pandas",
-        "Next.js",
-        "TypeScript",
-        "Supabase",
-        "Git",
-        "Vercel",
-        "Figma",
-      ],
+      title: "AI + Build",
+      items: "GenAI · LLM APIs · prompt design · human-in-the-loop workflows · Next.js · TypeScript · Supabase",
     },
   ],
 
   education: [
     {
-      institution: "Institute of Management Studies (IMS) Ghaziabad",
-      degree: "PGDM — Finance & Business Analytics",
-      period: "2025–2027",
-      result: "CGPA 9.27 / 10 (Year 1)",
+      period: "2025 — 2027",
+      institution: "IMS Ghaziabad",
+      degree: "PGDM · Finance & Business Analytics",
+      result: "CGPA 9.27 / 10 · Year 1",
     },
     {
+      period: "2020 — 2024",
       institution: "Galgotias University",
-      degree: "B.Tech — CSE (AI & Data Science)",
-      period: "2020–2024",
+      degree: "B.Tech · CSE (AI & Data Science)",
       result: "CGPA 8.81 / 10 · First Class with Distinction",
     },
   ],
 
   highlights: [
-    "Regional Qualifier — AIMA Business Simulation",
+    "Regional Qualifier · AIMA Business Simulation",
     "₹50,000 B.Tech Merit Scholarship",
-    "Finance Core Member — Finnacle, The Finance Club",
+    "Finance Core Member · Finnacle, The Finance Club",
   ],
 
   contact: {
-    heading: "Let’s build something useful.",
+    heading: "If the problem sits between product, analytics and AI, I’m interested.",
     description:
-      "Open to opportunities across AI Product, Product Analytics, Technical Product, AI Solutions and GenAI-focused analyst roles.",
+      "Open to AI Product, Product Analytics, Technical Product, AI Solutions and GenAI-focused analyst opportunities — with preference for Delhi NCR or remote roles.",
+    email: "amarentp23@gmail.com",
   },
 };
