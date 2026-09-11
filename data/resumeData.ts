@@ -29,7 +29,7 @@ export type ResumeTimelineSection = {
 export type ResumeSkillItem = {
   id: string;
   label: string;
-  icon: ResumeLogo;
+  icon?: ResumeLogo;
 };
 
 export type ResumeSkillGroup = {
@@ -88,7 +88,7 @@ export type ResumePageData = {
 export const resumeData: ResumePageData = {
   intro: {
     name: "Amar Jyoti",
-    tags: ["PGDM", "Business Analysis", "Finance"],
+    tags: ["AI Product", "Product Analytics", "GenAI SaaS", "SQL & Python"],
   },
 
   timelineSections: [
@@ -97,10 +97,21 @@ export const resumeData: ResumePageData = {
       title: "EXPERIENCE",
       items: [
         {
-          id: "youtube-content-creator",
-          title: "Content Creator / Python Tutor",
-          subtitle: "YouTube",
-          date: "March 2024 - Present",
+          id: "fooracles-product-research",
+          title: "Product Testing & Research Intern",
+          subtitle: "Fooracles",
+          date: "May 2026 – Jul 2026",
+          points: [
+            "Benchmarked **18 SaaS competitors** and conducted detailed feature and UX/UI analysis of **10 key products** to identify product gaps, usability issues and improvement opportunities.",
+            "Synthesized findings into product and interface recommendations for Fooracles.",
+            "Redesigned dashboard and selected UI elements in Figma; **selected recommendations were adopted** in the product interface.",
+          ],
+        },
+        {
+          id: "premier-programmer",
+          title: "Founder & Technical Educator",
+          subtitle: "Premier Programmer",
+          date: "Mar 2024 – Present",
           href: "https://www.youtube.com/@PremierProgrammer",
           logo: {
             src: "/images/logos/youtube.png",
@@ -109,27 +120,9 @@ export const resumeData: ResumePageData = {
             height: 34,
           },
           points: [
-            "Created **139+** Python tutorial videos for beginner learners.",
-            "Developed **30+ hours** of course content, **700+** coding questions and **25+** hands-on projects.",
-            "Reached **13K+** views, and received positive learner feedback.",
-          ],
-        },
-        {
-          id: "upwork-freelance",
-          title: "Freelance Website Designer & Graphic Designer",
-          subtitle: "Upwork",
-          date: "May 2024 - Aug 2024",
-          href: "https://www.upwork.com/freelancers/~012347d15afb9bf4dc",
-          logo: {
-            src: "/images/logos/upwork.png",
-            alt: "Upwork logo",
-            width: 46,
-            height: 46,
-          },
-          points: [
-            "Designed websites and graphic assets for international clients (**USA & Sri Lanka**).",
-            "Created **500+ AI-generated images** for a client project with quality and consistency.",
-            "Managed **client requirements, design execution, and timely delivery**.",
+            "Published **165+ Python tutorials** covering **40+ hours** of structured learning content.",
+            "Created **750+ coding questions** and **25 hands-on projects** for practical learning.",
+            "Reached **21K+ views** and **125+ learner comments** through code-focused educational content.",
           ],
         },
       ],
@@ -140,9 +133,9 @@ export const resumeData: ResumePageData = {
       items: [
         {
           id: "ims-pgdm",
-          title: "Post Graduate Diploma in Management (PGDM), [Finance | Analytics]",
-          subtitle: "IMS Ghaziabad",
-          date: "2027",
+          title: "PGDM — Finance & Business Analytics",
+          subtitle: "Institute of Management Studies (IMS) Ghaziabad",
+          date: "2025 – 2027",
           href: "https://www.ims-ghaziabad.ac.in/",
           logo: {
             src: "/images/logos/ims.png",
@@ -150,48 +143,46 @@ export const resumeData: ResumePageData = {
             width: 60,
             height: 28,
           },
+          points: ["Year 1 CGPA: **9.27 / 10**", "Finance Core Member, **Finnacle — The Finance Club**"],
         },
         {
           id: "galgotias-btech",
-          title: "Bachelor of Technology (B.Tech in CSE AI & Data Science Specialization)",
-          subtitle: "Galgotias University, Greater Noida",
-          date: "June 2024",
-          href: "https://certificates.galgotiasuniversity.edu.in/verify/2024/0c44fecf-10c5-490d-b3e6-8703ee08a064",
+          title: "B.Tech — Computer Science & Engineering (AI & Data Science)",
+          subtitle: "Galgotias University",
+          date: "2020 – 2024",
           logo: {
             src: "/images/logos/galgotias.png",
-            alt: "Galgotias logo",
+            alt: "Galgotias University logo",
             width: 48,
             height: 48,
           },
-          points: ["Graduated with **Distinction**", "CGPA: **8.81**"],
+          points: ["CGPA: **8.81 / 10**", "First Class with **Distinction**"],
         },
         {
           id: "evergreen-class-12",
           title: "Class XII (CBSE)",
-          subtitle: "Evergreen Public School, New Delhi",
-          date: "July 2020",
-          href: "https://drive.google.com/file/d/18roR6Zg9wnQ-xR_khz_N3tBCSqHLr0zu/view?usp=sharing",
+          subtitle: "Evergreen Public School",
+          date: "2020",
           logo: {
             src: "/images/logos/evergreen.png",
             alt: "Evergreen Public School logo",
             width: 48,
             height: 48,
           },
-          points: ["Final Grade: **86%**"],
+          points: ["Final Grade: **85.4%**"],
         },
         {
           id: "xaviers-class-10",
           title: "Class X (ICSE)",
           subtitle: "St. Xavier's High School, Patna",
-          date: "July 2020",
-          href: "https://drive.google.com/file/d/1V9sVB0DCeHliFPSoiiumUZ8s1iY-xW5w/view?usp=sharing",
+          date: "2017",
           logo: {
             src: "/images/logos/xaviers.png",
             alt: "St. Xavier's High School logo",
             width: 48,
             height: 48,
           },
-          points: ["Final Grade: **92.2%**"],
+          points: ["Final Grade: **90.6%**"],
         },
       ],
     },
@@ -202,69 +193,15 @@ export const resumeData: ResumePageData = {
     title: "SKILLS",
     groups: [
       {
-        id: "skills-group-1",
+        id: "analytics-skills",
         items: [
-          {
-            id: "ms-word",
-            label: "MS Word",
-            icon: {
-              src: "/images/skills/word.png",
-              alt: "MS Word icon",
-              width: 34,
-              height: 34,
-            },
-          },
-          {
-            id: "ms-excel",
-            label: "MS Excel",
-            icon: {
-              src: "/images/skills/excel.png",
-              alt: "MS Excel icon",
-              width: 34,
-              height: 34,
-            },
-          },
-          {
-            id: "ms-powerpoint",
-            label: "MS Powerpoint",
-            icon: {
-              src: "/images/skills/powerpoint.png",
-              alt: "MS Powerpoint icon",
-              width: 34,
-              height: 34,
-            },
-          },
-          {
-            id: "power-bi",
-            label: "Power BI",
-            icon: {
-              src: "/images/skills/powerbi.png",
-              alt: "Power BI icon",
-              width: 34,
-              height: 34,
-            },
-          },
-        ],
-      },
-      {
-        id: "skills-group-2",
-        items: [
+          { id: "sql", label: "SQL / PostgreSQL" },
           {
             id: "python",
             label: "Python",
             icon: {
               src: "/images/skills/python.png",
               alt: "Python icon",
-              width: 34,
-              height: 34,
-            },
-          },
-          {
-            id: "numpy",
-            label: "Numpy",
-            icon: {
-              src: "/images/skills/numpy.png",
-              alt: "Numpy icon",
               width: 34,
               height: 34,
             },
@@ -280,35 +217,50 @@ export const resumeData: ResumePageData = {
             },
           },
           {
-            id: "matplotlib",
-            label: "Matplotlib",
+            id: "power-bi",
+            label: "Power BI",
             icon: {
-              src: "/images/skills/idvwpDn6Co.png",
-              alt: "Matplotlib icon",
+              src: "/images/skills/powerbi.png",
+              alt: "Power BI icon",
               width: 34,
               height: 34,
             },
           },
           {
-            id: "seaborn",
-            label: "Seaborn",
+            id: "excel",
+            label: "Advanced Excel",
             icon: {
-              src: "/images/skills/seaborn.png",
-              alt: "Seaborn icon",
+              src: "/images/skills/excel.png",
+              alt: "Excel icon",
               width: 34,
               height: 34,
             },
           },
-          {
-            id: "pytorch",
-            label: "Pytorch",
-            icon: {
-              src: "/images/skills/pytorch.png",
-              alt: "Pytorch icon",
-              width: 34,
-              height: 34,
-            },
-          },
+          { id: "data-visualization", label: "Data Cleaning & Visualization" },
+        ],
+      },
+      {
+        id: "ai-product-skills",
+        items: [
+          { id: "genai", label: "Generative AI / LLM APIs" },
+          { id: "prompt-design", label: "Prompt Design" },
+          { id: "human-loop", label: "Human-in-the-Loop AI" },
+          { id: "evaluation-workflows", label: "AI Evaluation Workflows" },
+          { id: "nextjs", label: "Next.js" },
+          { id: "typescript", label: "TypeScript" },
+          { id: "supabase", label: "Supabase / Auth / RLS" },
+          { id: "figma", label: "Figma" },
+        ],
+      },
+      {
+        id: "product-business-skills",
+        items: [
+          { id: "product-analytics", label: "Product Analytics" },
+          { id: "business-analytics", label: "Business Analytics" },
+          { id: "competitive-analysis", label: "SaaS Competitive Analysis" },
+          { id: "product-testing", label: "Product Testing" },
+          { id: "ux-research", label: "UX Research" },
+          { id: "workflow-analysis", label: "Workflow Analysis" },
         ],
       },
     ],
@@ -316,98 +268,83 @@ export const resumeData: ResumePageData = {
 
   certificationSection: {
     id: "certification",
-    title: "CERTIFICATION",
+    title: "CERTIFICATIONS & ACHIEVEMENTS",
     items: [
       {
-        id: "udemy-python-ml",
-        title: "Python for Data Science and Machine Learning Bootcamp",
-        subtitle: "Udemy",
-        logo: {
-          src: "/images/logos/udemy.png",
-          alt: "Udemy logo",
-          width: 52,
-          height: 52,
-        },
-        actions: [
-          {
-            id: "udemy-python-ml-cert-1",
-            label: "Show Certificate",
-            href: "https://www.udemy.com/certificate/UC-1ddece34-9af6-4618-8db6-08e99cb623f5/",
-          },
-          
-        ],
+        id: "pcap-python",
+        title: "PCAP — Certified Associate in Python Programming",
+        subtitle: "Cisco / OpenEDG",
+        actions: [],
       },
       {
-        id: "ibm-ai-fundamentals",
-        title: "Artificial Intelligence Fundamentals",
-        subtitle: "IBM",
-        logo: {
-          src: "/images/logos/ibm.png",
-          alt: "IBM logo",
-          width: 52,
-          height: 24,
-        },
-        actions: [
-          {
-            id: "ibm-ai-fundamentals-cert",
-            label: "Show Certificate",
-            href: "https://skills.yourlearning.ibm.com/certificate/PLAN-7913EE1DB030",
-          },
-        ],
+        id: "oracle-sql",
+        title: "Oracle Academy SQL",
+        subtitle: "Oracle Academy",
+        actions: [],
       },
       {
-        id: "udemy-maths-genai",
-        title: "Mathematics-Basics to Advance for Data Science and GenAI",
-        subtitle: "Udemy",
+        id: "meity-genai",
+        title: "Generative AI Literacy",
+        subtitle: "Ministry of Electronics and Information Technology, Government of India",
+        actions: [],
+      },
+      {
+        id: "aima-qualifier",
+        title: "Regional Qualifier — AIMA Business Simulation",
+        subtitle: "AIMA",
+        actions: [],
+      },
+      {
+        id: "merit-scholarship",
+        title: "₹50,000 B.Tech Merit Scholarship",
+        subtitle: "Galgotias University",
         logo: {
-          src: "/images/logos/udemy.png",
-          alt: "Udemy logo",
-          width: 52,
-          height: 52,
+          src: "/images/logos/galgotias.png",
+          alt: "Galgotias University logo",
+          width: 48,
+          height: 48,
         },
-        actions: [
-          {
-            id: "udemy-maths-genai-cert",
-            label: "Show Certificate",
-            href: "https://www.udemy.com/certificate/UC-e0fe2007-16e0-4546-b693-1c6e4b62e4c7/",
-          },
-        ],
+        actions: [],
       },
     ],
   },
 
   projectsSection: {
     id: "projects",
-    title: "PROJECTS",
+    title: "SELECTED PROJECTS",
     items: [
       {
-        id: "finnacle-club-website",
-        title: "Finnacle Club IMS Website Development",
-        href: "https://finnacle-ims.vercel.app/",
-        logo: {
-          src: "/images/logos/finnacle.jpg",
-          alt: "Project logo",
-          width: 52,
-          height: 52,
-        },
+        id: "project-z",
+        title: "AI Subjective Evaluation Engine (Project Z)",
+        href: "https://projectz.vercel.app",
         points: [
-          "Developed an **IMS website for Finnacle Club** to manage and organize club-related information and activities.",
-          "Applied **problem-solving, web development, and system design** to build the website.",
+          "Built and deployed a **professor-first GenAI SaaS** spanning exam/rubric setup, LMS response ingestion, answer mapping, AI evaluation, professor review/re-evaluation and final-marks export.",
+          "Implemented human-in-the-loop controls, multi-tenant access, background processing, retries, auditability and immutable exports.",
+          "Technically validated a controlled **50-student × 2-question** workflow with **100 successful AI evaluations and 0 failed evaluation tasks**.",
         ],
       },
       {
-        id: "laptop-price-prediction",
-        title: "Laptop Price Prediction using Feature Engineering and Linear Regression",
-        href: "https://github.com/Amar-cmd/Prediction---Laptop-Price",
+        id: "placement-automation",
+        title: "Placement Cell Data Processing & Workflow Automation",
+        href: "https://placement-copilot-vercel.vercel.app",
+        points: [
+          "Automated consolidation, standardization, routing and highlighting of responses from multiple Google Forms across Google Sheets.",
+          "Reduced repetitive manual processing effort by approximately **50–60%** while improving consistency in placement-data handling.",
+        ],
+      },
+      {
+        id: "customer-churn-counterfactual",
+        title: "Counterfactual Learning in Customer Churn Prediction under Class Imbalance",
+        href: "https://github.com/Amar-cmd/Counterfactual-Learning-In-Customer-Churn-Prediction-Under-Class-Imbalance",
         logo: {
           src: "/images/logos/github.png",
-          alt: "Project logo",
+          alt: "GitHub logo",
           width: 52,
           height: 52,
         },
         points: [
-          "Built an **ML model** to predict laptop prices using **feature engineering** and **linear regression**.",
-          "Performed **data cleaning, preprocessing, and feature transformation** to improve model input quality.",
+          "Developed a machine-learning workflow for customer churn prediction under class imbalance using **SMOTE, Logistic Regression and neural networks**.",
+          "Implemented counterfactual explanation methods including **Wachter’s Method, Growing Spheres and a Genetic Algorithm** and documented the work through a reproducible notebook and research paper.",
         ],
       },
     ],
