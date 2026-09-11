@@ -59,21 +59,22 @@ export const siteData: SiteData = {
     leftLabel: "Amar Jyoti",
     rightLinks: [
       { label: "Work", href: "/#work" },
+      { label: "About", href: "/#about" },
       { label: "Experience", href: "/#experience" },
       { label: "Contact", href: "/#contact" },
     ],
     resumeButton: {
-      label: "View Resume",
+      label: "Resume",
       href: "/resume",
     },
   },
 
   hero: {
     heading: "Amar Jyoti",
-    role: "AI Product | Product Analytics | GenAI SaaS Builder | SQL & Python",
+    role: "AI Product · Product Analytics · GenAI",
     primaryCta: {
-      label: "Explore Project Z",
-      href: "/#project-z",
+      label: "View selected work",
+      href: "/#work",
     },
     image: {
       src: "/images/profile.png",
@@ -83,9 +84,9 @@ export const siteData: SiteData = {
 
   liteHero: {
     heading: "Amar Jyoti",
-    role: "AI Product | Product Analytics | GenAI SaaS Builder | SQL & Python",
+    role: "AI Product · Product Analytics · GenAI",
     primaryCta: {
-      label: "View Resume",
+      label: "Resume",
       href: "/resume",
     },
     contactLink: {
