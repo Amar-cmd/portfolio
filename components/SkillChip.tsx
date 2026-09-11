@@ -17,13 +17,15 @@ export default function SkillChip({ item }: SkillChipProps) {
       whileHover={chipHover}
       whileTap={{ scale: 0.99 }}
     >
-      <Image
-        src={item.icon.src}
-        alt={item.icon.alt}
-        width={item.icon.width}
-        height={item.icon.height}
-        className="skill-chip-icon"
-      />
+      {item.icon ? (
+        <Image
+          src={item.icon.src}
+          alt={item.icon.alt}
+          width={item.icon.width}
+          height={item.icon.height}
+          className="skill-chip-icon"
+        />
+      ) : null}
       <span className="skill-chip-label">{item.label}</span>
     </motion.div>
   );
