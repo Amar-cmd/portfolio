@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./portfolio.css";
+import "./portfolio-overrides.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
