@@ -96,7 +96,7 @@ export const portfolioData = {
       "Vercel",
     ],
     liveUrl: "https://projectz.vercel.app",
-    liveNote: "Login required — product screenshots and workflow are shown here so the core experience is understandable without signing in.",
+    liveNote: "Login required — the workflow preview above lets recruiters understand the core product flow without signing in.",
   },
 
   selectedWork: [
