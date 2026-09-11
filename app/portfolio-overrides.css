@@ -1,0 +1,23 @@
+.portfolio-shell .site-header,
+.contact-shell .site-header {
+  flex-direction: row;
+}
+
+.portfolio-shell .header-actions,
+.contact-shell .header-actions {
+  width: auto;
+  justify-content: flex-end;
+}
+
+@media (max-width: 820px) {
+  .portfolio-shell .site-header,
+  .contact-shell .site-header {
+    flex-direction: row;
+  }
+
+  .portfolio-shell .header-actions,
+  .contact-shell .header-actions {
+    width: auto;
+    justify-content: flex-end;
+  }
+}
