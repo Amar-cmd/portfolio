@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
 import { ContactSocialLink } from "@/data/siteData";
 import { revealUp, staggerContainer, staggerItem } from "@/lib/motion";
+import styles from "./ContactSection.module.css";
 
 type ContactSectionProps = {
   data: {
@@ -18,56 +18,86 @@ type ContactSectionProps = {
 export default function ContactSection({ data }: ContactSectionProps) {
   return (
     <motion.section
-      className="contact-page-section contact-page-section-simple"
+      className={styles.section}
       variants={revealUp}
       initial="hidden"
       animate="visible"
     >
-      <motion.div
-        className="contact-simple-card"
-        variants={staggerContainer}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div className="contact-simple-copy" variants={staggerItem}>
-          <span className="contact-simple-kicker">CONTACT</span>
-          <h1>{data.heading}</h1>
-          <p>{data.description}</p>
-        </motion.div>
-
-        <motion.a
-          variants={staggerItem}
-          className="resume-button contact-email-button"
-          href={`mailto:${data.recipientEmail}`}
+      <div className={styles.frame}>
+        <motion.div
+          className={styles.main}
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
         >
-          {data.emailLabel}
-        </motion.a>
+          <motion.p className={styles.kicker} variants={staggerItem}>
+            Contact
+          </motion.p>
 
-        <motion.div className="contact-simple-socials" variants={staggerContainer}>
-          {data.socialLinks.map((link) => (
-            <motion.a
-              key={link.ariaLabel}
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={link.ariaLabel}
-              className="contact-simple-social-link"
-              variants={staggerItem}
-              whileHover={{ y: -3, transition: { duration: 0.18 } }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Image
-                src={link.iconSrc}
-                alt={link.iconAlt}
-                width={34}
-                height={34}
-                className="contact-simple-social-icon"
-              />
-              <span>{link.ariaLabel}</span>
-            </motion.a>
-          ))}
+          <motion.h1 className={styles.title} variants={staggerItem}>
+            <span>{data.heading}</span>
+            <em>about useful products.</em>
+          </motion.h1>
+
+          <motion.p className={styles.description} variants={staggerItem}>
+            {data.description}
+          </motion.p>
+
+          <motion.a
+            variants={staggerItem}
+            className={styles.emailButton}
+            href={`mailto:${data.recipientEmail}`}
+            whileTap={{ scale: 0.99 }}
+          >
+            <span>{data.emailLabel}</span>
+            <span className={styles.emailArrow} aria-hidden="true">
+              ↗
+            </span>
+          </motion.a>
+
+          <motion.a
+            variants={staggerItem}
+            className={styles.emailAddress}
+            href={`mailto:${data.recipientEmail}`}
+          >
+            {data.recipientEmail}
+          </motion.a>
         </motion.div>
-      </motion.div>
+
+        <motion.aside
+          className={styles.aside}
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div className={styles.asideIntro} variants={staggerItem}>
+            <span className={styles.asideLabel}>Best fit</span>
+            <p>AI Product, Product Analytics and GenAI-focused work.</p>
+          </motion.div>
+
+          <motion.div className={styles.socialBlock} variants={staggerItem}>
+            <span className={styles.socialLabel}>Elsewhere</span>
+            <div className={styles.socialList}>
+              {data.socialLinks.map((link) => (
+                <motion.a
+                  key={link.ariaLabel}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={link.ariaLabel}
+                  className={styles.socialLink}
+                  whileTap={{ scale: 0.99 }}
+                >
+                  <span>{link.ariaLabel}</span>
+                  <span className={styles.socialArrow} aria-hidden="true">
+                    ↗
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </motion.aside>
+      </div>
     </motion.section>
   );
 }
