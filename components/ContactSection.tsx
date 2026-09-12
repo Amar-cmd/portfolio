@@ -1,214 +1,102 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
 import { motion } from "motion/react";
-import { buttonHover, revealUp, staggerContainer, staggerItem } from "@/lib/motion";
-import { ContactField, ContactSocialLink } from "@/data/siteData";
-
-type FormValues = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
+import { ContactSocialLink } from "@/data/siteData";
+import { revealUp, staggerContainer, staggerItem } from "@/lib/motion";
+import styles from "./ContactSection.module.css";
 
 type ContactSectionProps = {
   data: {
     heading: string;
-    submitLabel: string;
+    description: string;
     recipientEmail: string;
-    fields: ContactField[];
+    emailLabel: string;
     socialLinks: ContactSocialLink[];
   };
 };
 
-function buildGmailComposeUrl(params: {
-  to: string;
-  subject: string;
-  body: string;
-}) {
-  const searchParams = new URLSearchParams({
-    view: "cm",
-    fs: "1",
-    tf: "cm",
-    to: params.to,
-    su: params.subject,
-    body: params.body,
-  });
-
-  return `https://mail.google.com/mail/u/0/?${searchParams.toString()}`;
-}
-
-function ContactInputField({
-  field,
-  value,
-  onChange,
-}: {
-  field: ContactField;
-  value: string;
-  onChange: (name: keyof FormValues, value: string) => void;
-}) {
-  const isTextarea = field.type === "textarea";
-
-  const autoCompleteValue =
-    field.name === "name" ? "name" : field.name === "email" ? "email" : "off";
-
-  return (
-    <motion.div className="contact-field" variants={staggerItem}>
-      <div className="floating-field">
-        {isTextarea ? (
-          <textarea
-            id={field.name}
-            name={field.name}
-            placeholder=" "
-            required
-            rows={1}
-            className="contact-input contact-textarea"
-            value={value}
-            onChange={(event) => onChange(field.name, event.target.value)}
-          />
-        ) : (
-          <input
-            id={field.name}
-            name={field.name}
-            type={field.type}
-            placeholder=" "
-            required
-            autoComplete={autoCompleteValue}
-            className="contact-input"
-            value={value}
-            onChange={(event) => onChange(field.name, event.target.value)}
-          />
-        )}
-
-        <label htmlFor={field.name} className="floating-label">
-          {field.hint}
-        </label>
-      </div>
-    </motion.div>
-  );
-}
-
 export default function ContactSection({ data }: ContactSectionProps) {
-  const [formValues, setFormValues] = useState<FormValues>({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (name: keyof FormValues, value: string) => {
-    setFormValues((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const subject = formValues.subject.trim();
-    const body = [
-      `Name: ${formValues.name.trim()}`,
-      `Email: ${formValues.email.trim()}`,
-      "",
-      "Message:",
-      formValues.message.trim(),
-    ].join("\n");
-
-    const gmailUrl = buildGmailComposeUrl({
-      to: data.recipientEmail,
-      subject,
-      body,
-    });
-
-    const opened = window.open(gmailUrl, "_blank", "noopener,noreferrer");
-
-    if (!opened) {
-      window.location.href = gmailUrl;
-    }
-  };
-
   return (
     <motion.section
-      className="contact-page-section"
+      className={styles.section}
       variants={revealUp}
       initial="hidden"
       animate="visible"
     >
-      <div className="contact-center-frame">
+      <div className={styles.frame}>
         <motion.div
-          className="contact-heading-row"
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-        >
-          <span className="contact-heading-dot" />
-          <h1 className="contact-heading">{data.heading}</h1>
-        </motion.div>
-
-        <div className="contact-card">
-          <motion.form
-            onSubmit={handleSubmit}
-            className="contact-form"
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            {data.fields.map((field) => (
-              <ContactInputField
-                key={field.name}
-                field={field}
-                value={formValues[field.name]}
-                onChange={handleChange}
-              />
-            ))}
-
-            <motion.button
-              type="submit"
-              className="resume-button contact-submit-button"
-              whileHover={buttonHover}
-              whileTap={{ scale: 0.985 }}
-              variants={staggerItem}
-            >
-              {data.submitLabel}
-            </motion.button>
-          </motion.form>
-        </div>
-
-        <motion.div
-          className="contact-socials"
+          className={styles.main}
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
         >
-          {data.socialLinks.map((link) => {
-            const isExternal = link.href.startsWith("http");
+          <motion.p className={styles.kicker} variants={staggerItem}>
+            Contact
+          </motion.p>
 
-            return (
-              <motion.a
-                key={link.ariaLabel}
-                href={link.href}
-                className="contact-social-link"
-                aria-label={link.ariaLabel}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noreferrer" : undefined}
-                variants={staggerItem}
-                whileHover={{ y: -3, transition: { duration: 0.18 } }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <Image
-                  src={link.iconSrc}
-                  alt={link.iconAlt}
-                  width={38}
-                  height={38}
-                  className="contact-social-icon"
-                />
-              </motion.a>
-            );
-          })}
+          <motion.h1 className={styles.title} variants={staggerItem}>
+            <span>{data.heading}</span>
+            <em>about useful products.</em>
+          </motion.h1>
+
+          <motion.p className={styles.description} variants={staggerItem}>
+            {data.description}
+          </motion.p>
+
+          <motion.a
+            variants={staggerItem}
+            className={styles.emailButton}
+            href={`mailto:${data.recipientEmail}`}
+            whileTap={{ scale: 0.99 }}
+          >
+            <span>{data.emailLabel}</span>
+            <span className={styles.emailArrow} aria-hidden="true">
+              ↗
+            </span>
+          </motion.a>
+
+          <motion.a
+            variants={staggerItem}
+            className={styles.emailAddress}
+            href={`mailto:${data.recipientEmail}`}
+          >
+            {data.recipientEmail}
+          </motion.a>
         </motion.div>
+
+        <motion.aside
+          className={styles.aside}
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div className={styles.asideIntro} variants={staggerItem}>
+            <span className={styles.asideLabel}>Best fit</span>
+            <p>AI Product, Product Analytics and GenAI-focused work.</p>
+          </motion.div>
+
+          <motion.div className={styles.socialBlock} variants={staggerItem}>
+            <span className={styles.socialLabel}>Elsewhere</span>
+            <div className={styles.socialList}>
+              {data.socialLinks.map((link) => (
+                <motion.a
+                  key={link.ariaLabel}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={link.ariaLabel}
+                  className={styles.socialLink}
+                  whileTap={{ scale: 0.99 }}
+                >
+                  <span>{link.ariaLabel}</span>
+                  <span className={styles.socialArrow} aria-hidden="true">
+                    ↗
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </motion.aside>
       </div>
     </motion.section>
   );

@@ -16,12 +16,6 @@ export type HeroData = {
   };
 };
 
-export type ContactField = {
-  name: "name" | "email" | "subject" | "message";
-  hint: string;
-  type: "text" | "email" | "textarea";
-};
-
 export type ContactSocialLink = {
   href: string;
   ariaLabel: string;
@@ -53,9 +47,9 @@ export type SiteData = {
   };
   contactPage: {
     heading: string;
-    submitLabel: string;
+    description: string;
     recipientEmail: string;
-    fields: ContactField[];
+    emailLabel: string;
     socialLinks: ContactSocialLink[];
   };
 };
@@ -64,76 +58,50 @@ export const siteData: SiteData = {
   nav: {
     leftLabel: "Amar Jyoti",
     rightLinks: [
-      {
-        label: "Contact",
-        href: "/contact",
-      },
+      { label: "Work", href: "/#work" },
+      { label: "About", href: "/#about" },
+      { label: "Experience", href: "/#experience" },
+      { label: "Contact", href: "/#contact" },
     ],
     resumeButton: {
-      label: "View Resume",
+      label: "Resume",
       href: "/resume",
     },
   },
 
   hero: {
     heading: "Amar Jyoti",
-    role: "Finance | Business Analyst",
+    role: "AI Product · Product Analytics · GenAI",
     primaryCta: {
-      label: "View Resume",
-      href: "/resume",
+      label: "View selected work",
+      href: "/#work",
     },
     image: {
-      src: "/images/profile.png",
+      src: "/images/amar-jyoti-portrait.webp",
       alt: "Amar Jyoti portrait",
     },
   },
 
   liteHero: {
     heading: "Amar Jyoti",
-    role: "Finance | Business Analyst",
+    role: "AI Product · Product Analytics · GenAI",
     primaryCta: {
-      label: "View Resume",
+      label: "Resume",
       href: "/resume",
     },
     contactLink: {
       label: "Contact",
-      href: "/contact",
+      href: "/#contact",
     },
   },
 
   contactPage: {
-    heading: "Let's talk",
-    submitLabel: "Send",
+    heading: "Let’s talk",
+    description:
+      "For AI Product, Product Analytics, Technical Product, AI Solutions or GenAI-focused opportunities, email me directly or connect through one of the professional profiles below.",
     recipientEmail: "amarentp23@gmail.com",
-    fields: [
-      {
-        name: "name",
-        hint: "Name",
-        type: "text",
-      },
-      {
-        name: "email",
-        hint: "Email",
-        type: "email",
-      },
-      {
-        name: "subject",
-        hint: "Subject",
-        type: "text",
-      },
-      {
-        name: "message",
-        hint: "Message",
-        type: "textarea",
-      },
-    ],
+    emailLabel: "Send an email",
     socialLinks: [
-      {
-        href: "https://www.youtube.com/@PremierProgrammer",
-        ariaLabel: "YouTube",
-        iconSrc: "/images/social/youtube.png",
-        iconAlt: "YouTube icon",
-      },
       {
         href: "https://www.linkedin.com/in/a-jyoti/",
         ariaLabel: "LinkedIn",
@@ -141,16 +109,16 @@ export const siteData: SiteData = {
         iconAlt: "LinkedIn icon",
       },
       {
-        href: "tel:+919667284567",
-        ariaLabel: "Phone",
-        iconSrc: "/images/social/phone.png",
-        iconAlt: "Phone icon",
+        href: "https://github.com/Amar-cmd",
+        ariaLabel: "GitHub",
+        iconSrc: "/images/logos/github.png",
+        iconAlt: "GitHub icon",
       },
       {
-        href: "https://instagram.com",
-        ariaLabel: "Instagram",
-        iconSrc: "/images/social/instagram.png",
-        iconAlt: "Instagram icon",
+        href: "https://www.youtube.com/@PremierProgrammer",
+        ariaLabel: "YouTube",
+        iconSrc: "/images/social/youtube.png",
+        iconAlt: "YouTube icon",
       },
     ],
   },
