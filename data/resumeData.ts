@@ -16,6 +16,8 @@ const dev=(name:string,file:string)=>u("cdn.jsdelivr.net","/gh/devicons/devicon@
 const fav=(domain:string)=>u("www.google.com","/s2/favicons?domain="+domain+"&sz=128");
 const drive=(id:string)=>u("drive.google.com","/file/d/"+id+"/view?usp=sharing");
 const icon=(src:string,alt:string):ResumeLogo=>({src,alt,width:72,height:72});
+const meityLogo=u("commons.wikimedia.org","/wiki/Special:Redirect/file/Ministry_of_Electronics_and_Information_Technology.svg");
+const genericSaasLogo=u("cdn.jsdelivr.net","/npm/bootstrap-icons@1.11.3/icons/cloud-check.svg");
 export const resumeData:ResumePageData={
 intro:{name:"Amar Jyoti",tags:["AI Product","Product Analytics","GenAI SaaS","SQL & Python"]},
 timelineSections:[
@@ -30,18 +32,18 @@ timelineSections:[
 ],
 skillsSection:{id:"skills",title:"Skills",groups:[
 {id:"analytics",items:[{id:"postgres",label:"SQL / PostgreSQL",icon:icon(dev("postgresql","postgresql-original.svg"),"PostgreSQL")},{id:"python",label:"Python",icon:icon("/images/skills/python.png","Python")},{id:"powerbi",label:"Power BI",icon:icon("/images/skills/powerbi.png","Power BI")}]},
-{id:"build",items:[{id:"nextjs",label:"Next.js",icon:icon(dev("nextjs","nextjs-original.svg"),"Next.js")},{id:"typescript",label:"TypeScript",icon:icon(dev("typescript","typescript-original.svg"),"TypeScript")},{id:"supabase",label:"Supabase",icon:icon(dev("supabase","supabase-original.svg"),"Supabase")},{id:"figma",label:"Figma",icon:icon(dev("figma","figma-original.svg"),"Figma")},{id:"saas",label:"Software as a Service (SaaS)",icon:icon("/images/logos/saas.webp","SaaS")}]},
+{id:"build",items:[{id:"nextjs",label:"Next.js",icon:icon(dev("nextjs","nextjs-original.svg"),"Next.js")},{id:"typescript",label:"TypeScript",icon:icon(dev("typescript","typescript-original.svg"),"TypeScript")},{id:"supabase",label:"Supabase",icon:icon(dev("supabase","supabase-original.svg"),"Supabase")},{id:"figma",label:"Figma",icon:icon(dev("figma","figma-original.svg"),"Figma")},{id:"saas",label:"Software as a Service (SaaS)",icon:icon(genericSaasLogo,"SaaS cloud")}]},
 {id:"product",items:[{id:"workflow-automation",label:"Workflow Automation"},{id:"research",label:"Product Research"},{id:"ux",label:"UX Research"}]}
 ]},
 certificationSection:{id:"certification",title:"Certifications and Achievements",items:[
-{id:"genai",title:"Generative AI Literacy",subtitle:"Ministry of Electronics and Information Technology",logo:icon(fav("meity.gov.in"),"MeitY"),actions:[{id:"view",label:"View certificate",href:drive("15dO_l-vav3-d5Fk4aStdiov0geTBP7wN")}]},
+{id:"genai",title:"Generative AI Literacy",subtitle:"Ministry of Electronics and Information Technology",logo:{src:meityLogo,alt:"Ministry of Electronics and Information Technology",width:140,height:72},actions:[{id:"view",label:"View certificate",href:drive("15dO_l-vav3-d5Fk4aStdiov0geTBP7wN")}]},
 {id:"oracle",title:"Oracle Academy SQL",subtitle:"Oracle Academy",logo:icon(dev("oracle","oracle-original.svg"),"Oracle"),actions:[{id:"view",label:"View certificate",href:drive("18TNxct65a3uAyfwnBeQauwTirKm-Zwam")}]},
 {id:"pcap",title:"PCAP Python",subtitle:"Cisco / OpenEDG Python Institute",logo:icon(fav("pythoninstitute.org"),"Python Institute"),actions:[{id:"view",label:"View certificate",href:drive("1Eu9m5s7E1jH8Pa17ZaJaXHgTHccGn_bD")}]},
 {id:"aima",title:"Regional Qualifier, Business Simulation",subtitle:"All India Management Association",logo:icon(fav("aima.in"),"AIMA"),actions:[]},
 {id:"scholarship",title:"₹50,000 Merit Scholarship",subtitle:"IMS Ghaziabad",logo:icon("/images/logos/ims.png","IMS Ghaziabad"),actions:[]}
 ]},
 projectsSection:{id:"projects",title:"Selected Projects",items:[
-{id:"project-z",title:"AI Subjective Evaluation Engine (Project Z)",href:u("projectz.vercel.app"),points:["Professor-first GenAI evaluation with human review and final authority.","Controlled validation: **100 successful AI evaluations** and **0 failed tasks**."]},
+{id:"project-z",title:"AI Subjective Evaluation Engine (Project Z)",href:u("projectz.vercel.app"),logo:icon("/images/logos/saas.webp","Project Z"),points:["Professor-first GenAI evaluation with human review and final authority.","Controlled validation: **100 successful AI evaluations** and **0 failed tasks**."]},
 {id:"placement",title:"Placement Cell Workflow Automation",href:u("validation-docs.netlify.app","/"),points:["Automated placement-data consolidation, standardization and routing.","Reduced repetitive processing by approximately **50–60%**."]},
 {id:"ai-buddy",title:"AI Buddy",href:u("college-ai-helpdesk-chatbot.vercel.app"),points:["Authenticated college assistant with managed knowledge and LLM fallback."]},
 {id:"churn",title:"Counterfactual Learning in Customer Churn",href:u("github.com","/Amar-cmd/Counterfactual-Learning-In-Customer-Churn-Prediction-Under-Class-Imbalance"),logo:icon("/images/logos/github.png","GitHub"),points:["Class-imbalance analysis with counterfactual explanations and a research paper."]}
