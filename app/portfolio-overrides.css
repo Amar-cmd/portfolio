@@ -1,41 +1,118 @@
 .portfolio-shell .site-header,
-.contact-shell .site-header { flex-direction: row; }
-.portfolio-shell .header-actions,
-.contact-shell .header-actions { width: auto; justify-content: flex-end; }
+.contact-shell .site-header {
+  flex-direction: row;
+}
 
-/* Keep section labels human and editorial instead of tiny all-caps labels. */
+.portfolio-shell .header-actions,
+.contact-shell .header-actions {
+  width: auto;
+  justify-content: flex-end;
+}
+
+/* Human editorial labels: readable title case, no tiny all-caps tracking. */
 .editorial-eyebrow,
 .editorial-section-label,
 .editorial-section-label-light,
-.editorial-flow-label,
 .editorial-story-block > span,
+.editorial-stack-block > span,
 .editorial-work-proof > span,
-.editorial-stack-block > span {
-  font-size: 15px !important;
-  line-height: 1.35 !important;
-  font-weight: 650 !important;
-  letter-spacing: -0.01em !important;
+.editorial-flow-label,
+.editorial-fact span,
+.editorial-portrait-block figcaption {
   text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
 }
 
-.editorial-section-label { color: var(--editorial-blue); }
-.editorial-case-study .editorial-section-label,
-.editorial-section-label-light { color: #aab6ff; }
+.editorial-section-label {
+  color: var(--editorial-blue);
+}
 
-.editorial-portrait { filter: none !important; object-position: center 16% !important; }
+.editorial-case-study .editorial-section-label,
+.editorial-section-label-light {
+  color: #aeb9ff;
+}
+
+/* Use the supplied full-length portrait naturally without artificial desaturation. */
+.editorial-portrait {
+  object-fit: cover;
+  object-position: 50% 16%;
+  filter: none !important;
+}
+
+.experience-proof-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+}
 
 .experience-logo {
-  width: 26px;
-  height: 26px;
-  margin-right: 8px;
-  vertical-align: middle;
-  object-fit: contain;
+  width: 28px;
+  height: 28px;
   border-radius: 6px;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* Custom workflow automation mark requested by the portfolio owner. */
+.workflow-skill-mark {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #18202c, #334155);
+}
+
+.workflow-skill-mark::before,
+.workflow-skill-mark::after,
+.workflow-skill-mark i {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.workflow-skill-mark::before { left: 5px; top: 12px; }
+.workflow-skill-mark::after { right: 5px; top: 5px; }
+.workflow-skill-mark i:nth-child(1) { right: 5px; bottom: 5px; }
+.workflow-skill-mark i:nth-child(2) {
+  left: 12px;
+  top: 13px;
+  width: 11px;
+  height: 2px;
+  border-radius: 2px;
+  transform: rotate(-28deg);
+  transform-origin: left center;
+}
+.workflow-skill-mark i:nth-child(3) {
+  left: 12px;
+  top: 15px;
+  width: 11px;
+  height: 2px;
+  border-radius: 2px;
+  transform: rotate(30deg);
+  transform-origin: left center;
 }
 
 @media (max-width: 820px) {
   .portfolio-shell .site-header,
-  .contact-shell .site-header { flex-direction: row; }
+  .contact-shell .site-header {
+    flex-direction: row;
+  }
+
   .portfolio-shell .header-actions,
-  .contact-shell .header-actions { width: auto; justify-content: flex-end; }
+  .contact-shell .header-actions {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .editorial-portrait {
+    object-position: 50% 12%;
+  }
 }
