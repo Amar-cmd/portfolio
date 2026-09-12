@@ -101,9 +101,11 @@ export const portfolioData = {
     { title: "AI + Build", items: "Generative AI · LLM APIs · Next.js · TypeScript · Supabase · Workflow Automation" },
   ],
   education: [
-    { period: "2025 to 2027", institution: "IMS Ghaziabad", degree: "PGDM · Finance & Business Analytics", result: "9.27 / 10" },
+    { period: "2025 to 2027", institution: "IMS Ghaziabad", degree: "PGDM · Finance & Business Analytics", result: "9.27 / 10 (Year 1)" },
     { period: "2020 to 2024", institution: "Galgotias University", degree: "B.Tech · CSE (AI & Data Science)", result: "8.81 / 10 · Distinction" },
+    { period: "2018 to 2020", institution: "Evergreen Public School", degree: "Class XII · CBSE", result: "85.4%" },
+    { period: "2007 to 2017", institution: "St. Xavier's High School, Patna", degree: "Class X · ICSE", result: "90.6%" },
   ],
-  highlights: ["AIMA Regional Qualifier", "₹50,000 Merit Scholarship · IMS"],
-  contact: { heading: "Let’s build useful products.", description: "Open to AI Product, Product Analytics, Technical Product and GenAI-focused roles.", email: "" },
+  achievements: ["Regional Qualifier, AIMA Business Simulation", "₹50,000 Merit Scholarship · IMS Ghaziabad"],
+  contact: { heading: "Let’s build useful products.", description: "Open to AI Product, Product Analytics, Technical Product, AI Solutions and GenAI-focused roles." },
 } as const;
