@@ -36,6 +36,8 @@ export default function ProjectCard({ item }: ProjectCardProps) {
             height={item.logo.height}
             className="project-card-logo"
           />
+        ) : item.id === "placement" ? (
+          <span className="workflow-skill-mark" aria-label="Workflow automation mark"><i/><i/><i/></span>
         ) : null}
       </div>
 
