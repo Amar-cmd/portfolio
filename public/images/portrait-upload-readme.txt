@@ -1,0 +1,1 @@
+Portrait asset is managed as a binary repository blob.
