@@ -77,7 +77,7 @@ export const siteData: SiteData = {
       href: "/#work",
     },
     image: {
-      src: "/images/profile.png",
+      src: "/images/amar-jyoti-portrait.webp",
       alt: "Amar Jyoti portrait",
     },
   },
