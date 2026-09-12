@@ -25,7 +25,7 @@ export default function PortfolioHome() {
 
           <figure className="editorial-portrait-block">
             <div className="editorial-portrait-stage">
-              <img src="/images/amar-jyoti-portrait.webp" alt="Amar Jyoti" className="editorial-portrait" />
+              <img src="/images/amar-jyoti-portrait.png" alt="Amar Jyoti" className="editorial-portrait" />
             </div>
           </figure>
         </div>

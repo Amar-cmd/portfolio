@@ -38,8 +38,8 @@
   align-items: center;
   padding: 18px clamp(20px, 4vw, 64px);
   border-bottom: 1px solid var(--editorial-line);
-  background: rgba(244, 241, 234, 0.94);
-  backdrop-filter: blur(16px);
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .portfolio-shell .brand-name,
