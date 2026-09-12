@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Amar Jyoti | AI Product & Product Analytics",
   description:
-    "Portfolio of Amar Jyoti — AI Product, Product Analytics, GenAI SaaS, SQL/Python analytics, product research and workflow automation.",
+    "Portfolio of Amar Jyoti, focused on AI Product, Product Analytics, GenAI SaaS, SQL/Python analytics, product research and workflow automation.",
   keywords: [
     "AI Product",
     "Product Analytics",
