@@ -1,4 +1,1 @@
-export type PortfolioLink = {
-  label: string;
-  href: string;
-};
+export const portfolioData={hero:{eyebrow:"AI Product",heading:"Product thinking,",emphasis:"backed by code.",description:"I build practical products.",context:"B.Tech and PGDM",primaryCta:{label:"Work",href:"#work"},secondaryCta:{label:"Resume",href:"/resume"},socialLinks:[],facts:[]}} as const;
