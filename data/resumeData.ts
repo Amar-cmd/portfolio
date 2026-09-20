@@ -16,7 +16,6 @@ const dev=(name:string,file:string)=>u("cdn.jsdelivr.net","/gh/devicons/devicon@
 const fav=(domain:string)=>u("www.google.com","/s2/favicons?domain="+domain+"&sz=128");
 const drive=(id:string)=>u("drive.google.com","/file/d/"+id+"/view?usp=sharing");
 const icon=(src:string,alt:string):ResumeLogo=>({src,alt,width:72,height:72});
-const meityLogo=u("commons.wikimedia.org","/wiki/Special:Redirect/file/Ministry_of_Electronics_and_Information_Technology.svg");
 const genericSaasLogo=u("cdn.jsdelivr.net","/npm/bootstrap-icons@1.11.3/icons/cloud-check.svg");
 export const resumeData:ResumePageData={
 intro:{name:"Amar Jyoti",tags:["AI Product","Product Analytics","GenAI SaaS","SQL & Python"]},
@@ -36,8 +35,8 @@ skillsSection:{id:"skills",title:"Skills",groups:[
 {id:"product",items:[{id:"workflow-automation",label:"Workflow Automation"},{id:"research",label:"Product Research"},{id:"ux",label:"UX Research"}]}
 ]},
 certificationSection:{id:"certification",title:"Certifications and Achievements",items:[
-{id:"aiml-iitr",title:"Artificial Intelligence & Machine Learning Certification Program",subtitle:"E&ICT Academy, IIT Roorkee · Ongoing",actions:[]},
-{id:"genai",title:"Generative AI Literacy",subtitle:"Ministry of Electronics and Information Technology",logo:{src:meityLogo,alt:"Ministry of Electronics and Information Technology",width:140,height:72},actions:[{id:"view",label:"View certificate",href:drive("15dO_l-vav3-d5Fk4aStdiov0geTBP7wN")}]},
+{id:"aiml-iitr",title:"Artificial Intelligence & Machine Learning Certification Program",subtitle:"E&ICT Academy, IIT Roorkee · Ongoing",logo:icon("/images/logos/iitr.png","IIT Roorkee"),actions:[]},
+{id:"genai",title:"Generative AI Literacy",subtitle:"Ministry of Electronics and Information Technology",logo:icon("/images/logos/miety.jpg","Ministry of Electronics and Information Technology"),actions:[{id:"view",label:"View certificate",href:drive("15dO_l-vav3-d5Fk4aStdiov0geTBP7wN")}]},
 {id:"oracle",title:"Oracle Academy SQL",subtitle:"Oracle Academy",logo:icon(dev("oracle","oracle-original.svg"),"Oracle"),actions:[{id:"view",label:"View certificate",href:drive("18TNxct65a3uAyfwnBeQauwTirKm-Zwam")}]},
 {id:"pcap",title:"PCAP Python",subtitle:"Cisco / OpenEDG Python Institute",logo:icon(fav("pythoninstitute.org"),"Python Institute"),actions:[{id:"view",label:"View certificate",href:drive("1Eu9m5s7E1jH8Pa17ZaJaXHgTHccGn_bD")}]},
 {id:"aima",title:"Regional Qualifier, Business Simulation",subtitle:"All India Management Association",logo:icon(fav("aima.in"),"AIMA"),actions:[]},
