@@ -106,6 +106,6 @@ export const portfolioData = {
     { period: "2018 to 2020", institution: "Evergreen Public School", degree: "Class XII · CBSE", result: "85.4%" },
     { period: "2007 to 2017", institution: "St. Xavier's High School, Patna", degree: "Class X · ICSE", result: "90.6%" },
   ],
-  achievements: ["Regional Qualifier, AIMA Business Simulation", "₹50,000 Merit Scholarship · IMS Ghaziabad"],
+  achievements: ["Regional Qualifier, AIMA Business Simulation", "₹50,000 B.Tech Merit Scholarship"],
   contact: { heading: "Let’s build useful products.", description: "Open to AI Product, Product Analytics, Technical Product, AI Solutions and GenAI-focused roles." },
 } as const;
