@@ -36,11 +36,12 @@ skillsSection:{id:"skills",title:"Skills",groups:[
 {id:"product",items:[{id:"workflow-automation",label:"Workflow Automation"},{id:"research",label:"Product Research"},{id:"ux",label:"UX Research"}]}
 ]},
 certificationSection:{id:"certification",title:"Certifications and Achievements",items:[
+{id:"aiml-iitr",title:"Artificial Intelligence & Machine Learning Certification Program",subtitle:"E&ICT Academy, IIT Roorkee · Ongoing",actions:[]},
 {id:"genai",title:"Generative AI Literacy",subtitle:"Ministry of Electronics and Information Technology",logo:{src:meityLogo,alt:"Ministry of Electronics and Information Technology",width:140,height:72},actions:[{id:"view",label:"View certificate",href:drive("15dO_l-vav3-d5Fk4aStdiov0geTBP7wN")}]},
 {id:"oracle",title:"Oracle Academy SQL",subtitle:"Oracle Academy",logo:icon(dev("oracle","oracle-original.svg"),"Oracle"),actions:[{id:"view",label:"View certificate",href:drive("18TNxct65a3uAyfwnBeQauwTirKm-Zwam")}]},
 {id:"pcap",title:"PCAP Python",subtitle:"Cisco / OpenEDG Python Institute",logo:icon(fav("pythoninstitute.org"),"Python Institute"),actions:[{id:"view",label:"View certificate",href:drive("1Eu9m5s7E1jH8Pa17ZaJaXHgTHccGn_bD")}]},
 {id:"aima",title:"Regional Qualifier, Business Simulation",subtitle:"All India Management Association",logo:icon(fav("aima.in"),"AIMA"),actions:[]},
-{id:"scholarship",title:"₹50,000 Merit Scholarship",subtitle:"IMS Ghaziabad",logo:icon("/images/logos/ims.png","IMS Ghaziabad"),actions:[]}
+{id:"scholarship",title:"₹50,000 B.Tech Merit Scholarship",subtitle:"Merit-based academic scholarship",actions:[]}
 ]},
 projectsSection:{id:"projects",title:"Selected Projects",items:[
 {id:"project-z",title:"AI Subjective Evaluation Engine (Project Z)",href:u("projectz.vercel.app"),logo:icon("/images/logos/saas.webp","Project Z"),points:["Professor-first GenAI evaluation with human review and final authority.","Controlled validation: **100 successful AI evaluations** and **0 failed tasks**."]},
