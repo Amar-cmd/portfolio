@@ -22,7 +22,7 @@ intro:{name:"Amar Jyoti",tags:["AI Product","Product Analytics","GenAI SaaS","SQ
 timelineSections:[
 {id:"experience",title:"Experience",items:[
 {id:"fooracles",title:"Product Testing & Research Intern",subtitle:"Fooracles",date:"May 2026 to Jul 2026",logo:icon("/images/logos/fooracles.png","Fooracles"),href:drive("1RHxzQh9YDPj2O2M5FyJzfv8gwwg5I96m"),points:["Benchmarked **18 SaaS competitors** and analysed **10 products**.","Selected product and interface recommendations were adopted."]},
-{id:"premier",title:"Founder & Technical Educator",subtitle:"Premier Programmer",date:"Mar 2024 to Present",logo:icon("/images/logos/youtube.png","Premier Programmer"),points:["Published **165+ Python tutorials** and **40+ hours** of content.","Created **750+ coding questions** and **25 hands-on projects**."]}]},
+{id:"premier",title:"Founder & Technical Educator",subtitle:"Premier Programmer",date:"Mar 2024 to Present",href:u("www.youtube.com","/@PremierProgrammer"),logo:icon("/images/logos/youtube.png","Premier Programmer"),points:["Published **165+ Python tutorials** and **40+ hours** of content.","Created **750+ coding questions** and **25 hands-on projects**."]}]},
 {id:"education",title:"Education",items:[
 {id:"ims",title:"PGDM, Finance & Business Analytics",subtitle:"IMS Ghaziabad",date:"2025 to 2027",logo:icon("/images/logos/ims.png","IMS Ghaziabad"),points:["Year 1 CGPA: **9.27 / 10**"]},
 {id:"btech",title:"B.Tech, CSE (AI & Data Science)",subtitle:"Galgotias University",date:"2020 to 2024",logo:icon("/images/logos/galgotias.png","Galgotias University"),href:u("certificates.galgotiasuniversity.edu.in","/verify/2024/0c44fecf-10c5-490d-b3e6-8703ee08a064"),points:["CGPA: **8.81 / 10**, First Class with Distinction"]},
